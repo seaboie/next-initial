@@ -17,26 +17,20 @@ function askQuestion(query) {
 
 (async () => {
   try {
-    const projectName = await askQuestion('Project name: ');
-    const useTypeScript = await askQuestion('Use TypeScript? (yes/no): ');
+    const projectName = await askQuestion('Folder name is: ');
+    // const useTypeScript = await askQuestion('Use TypeScript? (yes/no): ');
 
-    const projectPath = path.join(process.cwd(), projectName);
-    const isTypeScript = useTypeScript.toLowerCase() === 'yes';
+    const folderPath = path.join(process.cwd(), projectName);
+    // const isTypeScript = useTypeScript.toLowerCase() === 'yes';
 
-    if (!fs.existsSync(projectPath)) {
-      fs.mkdirSync(projectPath, { recursive: true });
+    if (!fs.existsSync(folderPath)) {
+      fs.mkdirSync(folderPath, { recursive: true });
     } else {
       console.log('Project directory already exists.');
       process.exit(1);
     }
 
-    createFiles(projectPath, isTypeScript);
-
-    if (isTypeScript) {
-      execSync('npm install typescript @types/react @types/node', { cwd: projectPath, stdio: 'inherit' });
-    }
-
-    execSync('npm install react react-dom next', { cwd: projectPath, stdio: 'inherit' });
+    createFiles(folderPath);
 
     console.log('Project setup complete!');
   } catch (error) {
