@@ -1,16 +1,16 @@
 {
-  "name": "next-`initial",
-  "version": "1.0.0",
+  "name": "next-initial",
+  "version": "1.0.6",
   "description": "",
   "main": "next-initial.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "nextinit": "./next-initial.js"
+    "nextinit": "next-initial.js"
   },
   "type": "module",
-  "keywords": [],
-  "author": "",
+  "keywords": ["files", "folder"],
+  "author": "Kritbovorn Taweeyossak",
   "license": "ISC"
 }
