@@ -127,8 +127,11 @@ export default function Home() {
 ```  
 
 ---  
-<img width="248" alt="Screenshot 2567-07-19 at 18 13 48" src="https://github.com/user-attachments/assets/6083e955-ad00-4993-9c3c-bc107de3092d">  
 
----  
+<img width="387" alt="Screenshot 2567-07-19 at 20 27 06" src="https://github.com/user-attachments/assets/e6b274de-e59c-481a-b6dc-cfe63d738709"> 
+
+---   
+
+
 
 
