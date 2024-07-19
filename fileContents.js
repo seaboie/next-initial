@@ -100,11 +100,22 @@ const createFiles = (projectPath) => {
         )
       ),
     },
-    // layout
+    // layout 
     {
       name: "layout/layout_card.tsx",
       content: readTemplate(
         path.join(__dirname, "templates", "layout/layout", "layout_card.tsx")
+      ),
+    },
+    {
+      name: "layout/layout_image_profile_title_medium.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "layout/layout",
+          "layout_image_profile_title_medium.tsx"
+        )
       ),
     },
     {
@@ -151,6 +162,12 @@ const createFiles = (projectPath) => {
       name: "text/text_extra_large.tsx",
       content: readTemplate(
         path.join(__dirname, "templates", "layout/text", "text_extra_large.tsx")
+      ),
+    },
+    {
+      name: "text/text_extra_large_semi_bold.tsx",
+      content: readTemplate(
+        path.join(__dirname, "templates", "layout/text", "text_extra_large_semi_bold.tsx")
       ),
     },
     {
@@ -212,6 +229,18 @@ const createFiles = (projectPath) => {
           "templates",
           "layout/text",
           "text_two_extra_large.tsx"
+        )
+      ),
+    },
+    // Widget
+    {
+      name: "widget/profile_card_widget.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "layout/widget",
+          "profile_card_widget.tsx"
         )
       ),
     },
