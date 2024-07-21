@@ -1,6 +1,12 @@
-# Next initial folders and files  
+# Next initial folders and files ( Next.js )  
 
-## Install  
+## [Create Next.js app](https://nextjs.org/docs/getting-started/installation)  
+
+```bash
+npx create-next-app@latest
+```  
+
+## Install Package  
 ```bash
 npm install -g next-initial
 ```  
@@ -9,7 +15,7 @@ npm install -g next-initial
 
 - In File `tailwind.config.ts`  
 ```ts
-import type { Config } from "tailwindcss";
+iimport type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -19,10 +25,16 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      colors: {
+        onPrimary: "#334155", // Define custom color to `onPrimary:`
+        onSecondary: '#64758B', // Define custom color to `onSecondary:`
+        onError: '#FF5349',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
       },
     },
   },
@@ -32,7 +44,7 @@ export default config;
 
 ```  
 
-- content[]
+## content[]
 
 ```ts
 content: [
@@ -42,12 +54,34 @@ content: [
   ],
 ```  
 
-## Usage  
+### Usage  
 > we must change directory to [ `src/pages` or `src/components` or `src/app`]  
 > - If not: tailwind CSS **not active**
 
-- Ex : Create `components` folder in `src`
+- Example : Create `components` folder in `src`
 - `cd` in `components` and run command  
+
+## Define custom Color ( can change one point to effect all )  
+> `onPrimary`  
+> `onSecondary`  
+
+```ts
+theme: {
+    extend: {
+      colors: {
+        onPrimary: "#334155", // Define custom color to `onPrimary:`
+        onSecondary: '#64758B', // Define custom color to `onSecondary:`
+        onError: '#FF5349',
+        background: "var(--background)",
+        foreground: "var(--foreground)",
+      },
+      fontFamily: {
+        sans: ["var(--font-geist-sans)"],
+        mono: ["var(--font-geist-mono)"],
+      },
+    },
+  },
+```  
 
 ### Run command
 ```bash
@@ -86,14 +120,23 @@ src/
         │   ├── layout_special_image_title_description.tsx
         │   └── Layout_two_column_between.tsx
         ├── text/
-        │   ├── text_base_head.tsx
+        │   ├── text_base_bold.tsx
+        │   ├── text_base_medium.tsx
+        │   ├── text_base.tsx
+        │   ├── text_extra_large_bold.tsx
+        │   ├── text_extra_large_medium.tsx
         │   ├── text_extra_large.tsx
-        │   ├── text_extra_small_head_bold.tsx
-        │   ├── text_extra_small_head.tsx
-        │   ├── text_large_head.tsx
+        │   ├── text_extra_small_bold.tsx
+        │   ├── text_extra_small_medium.tsx
+        │   ├── text_extra_small.tsx
+        │   ├── text_large_bold.tsx
+        │   ├── text_large_medium.tsx
         │   ├── text_large.tsx
-        │   ├── text_small_head_bold.tsx
-        │   ├── text_small_head.tsx
+        │   ├── text_small_bold.tsx
+        │   ├── text_small_medium.tsx
+        │   ├── text_small.tsx
+        │   ├── text_two_extra_large_bold.tsx
+        │   ├── text_two_extra_large_medium.tsx
         │   └── text_two_extra_large.tsx
         ├── widget/
             ├── profile_card_widget.tsx
@@ -125,8 +168,6 @@ export default function Home() {
   );
 }
 ```  
-
----  
 
 <img width="387" alt="Screenshot 2567-07-19 at 20 27 06" src="https://github.com/user-attachments/assets/e6b274de-e59c-481a-b6dc-cfe63d738709"> 
 

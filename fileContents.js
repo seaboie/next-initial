@@ -19,7 +19,7 @@ const createFiles = (projectPath) => {
     {
       name: "button/button_default.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/button", "button_default.tsx")
+        path.join(__dirname, "templates", "widget/button", "button_default.tsx")
       ),
     },
     {
@@ -28,7 +28,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/button",
+          "widget/button",
           "button_learn_more.tsx"
         )
       ),
@@ -40,7 +40,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_content_fill_vertical.tsx"
         )
       ),
@@ -51,7 +51,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_content_fill.tsx"
         )
       ),
@@ -62,7 +62,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_icon_small.tsx"
         )
       ),
@@ -73,7 +73,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_profile_extra_small.tsx"
         )
       ),
@@ -84,7 +84,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_profile_medium.tsx"
         )
       ),
@@ -95,7 +95,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/image",
+          "widget/image",
           "image_profile_small.tsx"
         )
       ),
@@ -104,7 +104,7 @@ const createFiles = (projectPath) => {
     {
       name: "layout/layout_card.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/layout", "layout_card.tsx")
+        path.join(__dirname, "templates", "widget/layout", "layout_card.tsx")
       ),
     },
     {
@@ -113,7 +113,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/layout",
+          "widget/layout",
           "layout_image_profile_title_medium.tsx"
         )
       ),
@@ -124,7 +124,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/layout",
+          "widget/layout",
           "layout_image_profile_title.tsx"
         )
       ),
@@ -135,7 +135,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/layout",
+          "widget/layout",
           "layout_special_image_title_description.tsx"
         )
       ),
@@ -146,79 +146,167 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/layout",
+          "widget/layout",
           "layout_two_column_between.tsx"
         )
       ),
     },
     // text
     {
-      name: "text/text_base_head.tsx",
+      name: "text/text_base_bold.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_base_head.tsx")
+        path.join(__dirname, "templates", "widget/text", "text_base_bold.tsx")
+      ),
+    },
+    {
+      name: "text/text_base_medium.tsx",
+      content: readTemplate(
+        path.join(__dirname, "templates", "widget/text", "text_base_medium.tsx")
+      ),
+    },
+    {
+      name: "text/text_base.tsx",
+      content: readTemplate(
+        path.join(__dirname, "templates", "widget/text", "text_base.tsx")
+      ),
+    },
+    {
+      name: "text/text_extra_large_bold.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_extra_large_bold.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_extra_large_medium.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_extra_large_medium.tsx"
+        )
       ),
     },
     {
       name: "text/text_extra_large.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_extra_large.tsx")
+        path.join(__dirname, "templates", "widget/text", "text_extra_large.tsx")
       ),
     },
     {
-      name: "text/text_extra_large_semi_bold.tsx",
+      name: "text/text_extra_small_bold.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_extra_large_semi_bold.tsx")
+        path.join(__dirname, "templates", "widget/text", "text_extra_small_bold.tsx")
       ),
     },
     {
-      name: "text/text_extra_small_head_bold.tsx",
-      content: readTemplate(
-        path.join(
-          __dirname,
-          "templates",
-          "layout/text",
-          "text_extra_small_head_bold.tsx"
-        )
-      ),
-    },
-    {
-      name: "text/text_extra_small_head.tsx",
+      name: "text/text_extra_small_medium.tsx",
       content: readTemplate(
         path.join(
           __dirname,
           "templates",
-          "layout/text",
-          "text_extra_small_head.tsx"
+          "widget/text",
+          "text_extra_small_medium.tsx"
         )
       ),
     },
     {
-      name: "text/text_large_head.tsx",
+      name: "text/text_extra_small.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_large_head.tsx")
+        path.join(__dirname, "templates", "widget/text", "text_extra_small.tsx")
+      ),
+    },
+    {
+      name: "text/text_large_bold.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_large_bold.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_large_medium.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_large_medium.tsx"
+        )
       ),
     },
     {
       name: "text/text_large.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_large.tsx")
-      ),
-    },
-    {
-      name: "text/text_small_head_bold.tsx",
-      content: readTemplate(
         path.join(
           __dirname,
           "templates",
-          "layout/text",
-          "text_small_head_bold.tsx"
+          "widget/text",
+          "text_large.tsx"
         )
       ),
     },
     {
-      name: "text/text_small_head.tsx",
+      name: "text/text_small_bold.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "layout/text", "text_small_head.tsx")
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_small_bold.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_small_medium.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_small_medium.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_small.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_small.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_two_extra_large_bold.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_two_extra_large_bold.tsx"
+        )
+      ),
+    },
+    {
+      name: "text/text_two_extra_large_medium.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_two_extra_large_medium.tsx"
+        )
       ),
     },
     {
@@ -227,7 +315,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/text",
+          "widget/text",
           "text_two_extra_large.tsx"
         )
       ),
@@ -239,7 +327,7 @@ const createFiles = (projectPath) => {
         path.join(
           __dirname,
           "templates",
-          "layout/widget",
+          "widget/widget",
           "profile_card_widget.tsx"
         )
       ),
