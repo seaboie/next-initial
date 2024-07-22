@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import LayoutCard from "../layout/layout_card";
-import ButtonDefault from "../button/button_default";
-import TextExtraLargeMedium from "../text/text_extra_large_medium";
-import TextSmall from "../text/text_small";
+import LayoutCard from "../../layout/layout_card";
+import ButtonDefault from "../../button/button_default";
+import TextExtraLargeMedium from "../../text/text_extra_large_medium";
+import TextSmall from "../../text/text_small";
 
 export default function ProfileCardWidget({
   coverImage,

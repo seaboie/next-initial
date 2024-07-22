@@ -21,7 +21,7 @@ export default function ListImageCaptionTitleDescriptionWidget({
   description,
 }: ListImageCaptionTitleDescriptionWidgetProps) {
   return (
-    <div className="max-w-md md:max-w-2xl bg-slate-200 rounded-xl shadow-lg overflow-hidden  mx-auto">
+    <div className="max-w-md md:max-w-2xl rounded-xl shadow-lg overflow-hidden  mx-auto">
       <div className="md:flex">
         <div className="md:shrink-0">
           <Image

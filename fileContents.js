@@ -100,7 +100,7 @@ const createFiles = (projectPath) => {
         )
       ),
     },
-    // layout 
+    // layout
     {
       name: "layout/layout_card.tsx",
       content: readTemplate(
@@ -201,7 +201,12 @@ const createFiles = (projectPath) => {
     {
       name: "text/text_extra_small_bold.tsx",
       content: readTemplate(
-        path.join(__dirname, "templates", "widget/text", "text_extra_small_bold.tsx")
+        path.join(
+          __dirname,
+          "templates",
+          "widget/text",
+          "text_extra_small_bold.tsx"
+        )
       ),
     },
     {
@@ -224,12 +229,7 @@ const createFiles = (projectPath) => {
     {
       name: "text/text_large_bold.tsx",
       content: readTemplate(
-        path.join(
-          __dirname,
-          "templates",
-          "widget/text",
-          "text_large_bold.tsx"
-        )
+        path.join(__dirname, "templates", "widget/text", "text_large_bold.tsx")
       ),
     },
     {
@@ -246,23 +246,13 @@ const createFiles = (projectPath) => {
     {
       name: "text/text_large.tsx",
       content: readTemplate(
-        path.join(
-          __dirname,
-          "templates",
-          "widget/text",
-          "text_large.tsx"
-        )
+        path.join(__dirname, "templates", "widget/text", "text_large.tsx")
       ),
     },
     {
       name: "text/text_small_bold.tsx",
       content: readTemplate(
-        path.join(
-          __dirname,
-          "templates",
-          "widget/text",
-          "text_small_bold.tsx"
-        )
+        path.join(__dirname, "templates", "widget/text", "text_small_bold.tsx")
       ),
     },
     {
@@ -279,12 +269,7 @@ const createFiles = (projectPath) => {
     {
       name: "text/text_small.tsx",
       content: readTemplate(
-        path.join(
-          __dirname,
-          "templates",
-          "widget/text",
-          "text_small.tsx"
-        )
+        path.join(__dirname, "templates", "widget/text", "text_small.tsx")
       ),
     },
     {
@@ -322,27 +307,40 @@ const createFiles = (projectPath) => {
     },
     // Widget
     {
-      name: "widget/list_image_caption_title_description.tsx",
+      name: "widget/list_image_caption_title_description_widget.tsx",
       content: readTemplate(
         path.join(
           __dirname,
           "templates",
           "widget/widget",
-          "list_image_caption_title_description.tsx"
+          "list_image_caption_title_description_widget.tsx"
         )
       ),
     },
+    // widget / profile
     {
-      name: "widget/profile_card_widget.tsx",
+      name: "widget/profile/profile_card_widget.tsx",
       content: readTemplate(
         path.join(
           __dirname,
           "templates",
-          "widget/widget",
+          "widget/widget/profile",
           "profile_card_widget.tsx"
         )
       ),
     },
+
+    // {
+    //   name: "widget/profile_card_widget.tsx",
+    //   content: readTemplate(
+    //     path.join(
+    //       __dirname,
+    //       "templates",
+    //       "widget/widget",
+    //       "profile_card_widget.tsx"
+    //     )
+    //   ),
+    // },
 
     // { name: `pages/index.${isTypeScript ? 'tsx' : 'js'}`, content: readTemplate(path.join(__dirname, 'templates', isTypeScript ? 'ts' : 'js', `index.${isTypeScript ? 'tsx' : 'js'}`)) }
   ];

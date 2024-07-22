@@ -1,6 +1,6 @@
 {
   "name": "next-initial",
-  "version": "1.0.20",
+  "version": "1.0.29",
   "description": "",
   "main": "next-initial.js",
   "scripts": {
@@ -10,7 +10,11 @@
     "nextinit": "next-initial.js"
   },
   "type": "module",
-  "keywords": ["files", "folder", "widget"],
+  "keywords": [
+    "files",
+    "folder",
+    "widget"
+  ],
   "author": "Kritbovorn Taweeyossak",
   "license": "ISC"
 }
