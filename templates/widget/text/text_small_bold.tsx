@@ -1,13 +1,13 @@
 import React, { HTMLAttributes } from "react";
 
-interface TextSmallHeadBoldProps {
+interface TextSmallBoldProps {
   text: string;
   className?: HTMLAttributes<HTMLDivElement> | string | undefined;
 }
 
-export default function TextSmallHeadBold({
+export default function TextSmallBold({
   text,
   className,
-}: TextSmallHeadBoldProps) {
+}: TextSmallBoldProps) {
   return <div className={`text-sm font-bold ${className}`}>{text}</div>;
 }

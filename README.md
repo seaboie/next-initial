@@ -61,19 +61,43 @@ content: [
 - Example : Create `components` folder in `src`
 - `cd` in `components` and run command  
 
+### Run command
+```bash
+nextinit
+```  
+
+> type your folder name; like `widget` >> Enter.  
+
+> FINISH  
+
 ## Define custom Color ( can change one point to effect all )  
 > `onPrimary`  
 > `onSecondary`  
 
+- In File `tailwind.config.ts`  
+
 ```ts
 theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
-        onPrimary: "#334155", // Define custom color to `onPrimary:`
-        onSecondary: '#64758B', // Define custom color to `onSecondary:`
+        onPrimary: "#334155",
+        onSecondary: '#64758B',
+        onTertiary: '#64758B',
         onError: '#FF5349',
         background: "var(--background)",
         foreground: "var(--foreground)",
+        blue: "#1fb6ff",
+        pink: "#ff49db",
+        orange: "#ff7849",
+        green: "#13ce66",
+        "gray-dark": "#273444",
+        gray: "#8492a6",
+        "gray-light": "#d3dce6",
       },
       fontFamily: {
         sans: ["var(--font-geist-sans)"],
@@ -83,14 +107,35 @@ theme: {
   },
 ```  
 
-### Run command
-```bash
-nextinit
+## Define `protocol` and `hostname` in `images / remotePatterns`...  
+
+- In File `next.config.mjs`  
+
+```ts 
+
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    reactCompiler: true,
+    ppr: 'incremental'
+  },
+  images: {
+    remotePatterns: [
+      {
+        protocol:"https",
+        hostname:"images.pexels.com"
+      },
+      {
+        protocol:"https",
+        hostname:"images.unsplash.com"
+      }
+    ]
+  }
+};
+
+export default nextConfig;
+
 ```  
-
-> type your folder name; like `widget` >> Enter.  
-
-> FINISH  
 
 ## Structure tree  
 
@@ -139,6 +184,7 @@ src/
         │   ├── text_two_extra_large_medium.tsx
         │   └── text_two_extra_large.tsx
         ├── widget/
+            ├── list_image_caption_title_description.tsx
             ├── profile_card_widget.tsx
 
 ```  

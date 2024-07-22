@@ -322,6 +322,17 @@ const createFiles = (projectPath) => {
     },
     // Widget
     {
+      name: "widget/list_image_caption_title_description.tsx",
+      content: readTemplate(
+        path.join(
+          __dirname,
+          "templates",
+          "widget/widget",
+          "list_image_caption_title_description.tsx"
+        )
+      ),
+    },
+    {
       name: "widget/profile_card_widget.tsx",
       content: readTemplate(
         path.join(

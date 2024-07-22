@@ -5,7 +5,7 @@ interface TextExtraSmallHeadProps {
   className?: HTMLAttributes<HTMLDivElement> | string | undefined;
 }
 
-export default function TextExtraSmallHead({
+export default function TextExtraSmall({
   text,
   className,
 }: TextExtraSmallHeadProps) {

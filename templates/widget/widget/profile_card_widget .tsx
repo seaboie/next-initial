@@ -1,9 +1,9 @@
 import React from "react";
 import Image from "next/image";
-import TextExtraLargeSemiBold from "../text/text_extra_large_semi_bold";
 import LayoutCard from "../layout/layout_card";
-import TextExtraSmallHead from "../text/text_extra_small_head";
 import ButtonDefault from "../button/button_default";
+import TextExtraLargeMedium from "../text/text_extra_large_medium";
+import TextSmall from "../text/text_small";
 
 export default function ProfileCardWidget({
   coverImage,
@@ -32,7 +32,7 @@ export default function ProfileCardWidget({
               fill
               alt={coverAlt}
               priority
-              className="rounded-t-lg"
+              className="rounded-t-lg object-cover"
               sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
             />
           </div>
@@ -48,7 +48,7 @@ export default function ProfileCardWidget({
           />
         </div>
         <div className="h-1/2 flex items-center flex-col justify-evenly ">
-          <TextExtraLargeSemiBold text={name} />
+          <TextExtraLargeMedium text={name} />
           <div className="flex items-center gap-4">
             <div className="flex items-center gap-1">
               <Image
@@ -76,7 +76,7 @@ export default function ProfileCardWidget({
                 className="w-3 h-3 rounded-full object-cover"
               />
             </div>
-            <TextExtraSmallHead text={`${followerCount} Followers`} />
+            <TextSmall text={`${followerCount} Followers`} />
           </div>
           <ButtonDefault text={buttonTitle} />
         </div>
