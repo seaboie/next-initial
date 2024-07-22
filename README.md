@@ -184,7 +184,7 @@ src/
         │   ├── text_two_extra_large_medium.tsx
         │   └── text_two_extra_large.tsx
         ├── widget/
-            ├── list_image_caption_title_description.tsx
+            ├── list_image_caption_title_description_widget.tsx
             ├── profile_card_widget.tsx
 
 ```  
@@ -219,6 +219,22 @@ export default function Home() {
 
 ---   
 
+
+### `<ListImageCaptionTitleDescriptionWidget />`  
+
+```ts
+<ListImageCaptionTitleDescription
+  imageUrl="https://images.pexels.com/photos/19171623/pexels-photo-19171623.jpeg?auto=compress&cs=tinysrgb&w=1200&lazy=load"
+  imageAlt="Somethings"
+  caption="Isabel Obrien"
+  title="9364ae85-2697-5e30-870a-1b483a7a25ce"
+  description="movement attack concerned shaking charge grown exactly did event burst earth porch dirt dull cookies national gate air blue stuck son that biggest chose"
+/>
+```  
+
+<img width="853" alt="Screenshot 2567-07-22 at 13 40 27" src="https://github.com/user-attachments/assets/b77dcc30-9d6d-4714-b29e-0879b9a8ff09">  
+
+---  
 
 
 

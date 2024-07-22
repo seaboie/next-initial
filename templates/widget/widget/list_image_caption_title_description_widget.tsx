@@ -5,7 +5,7 @@ import TextLargeMedium from "../text/text_large_medium";
 import TextSmall from "../text/text_small";
 import TextSmallBold from "../text/text_small_bold";
 
-interface ListImageCaptionTitleDescriptionProps {
+interface ListImageCaptionTitleDescriptionWidgetProps {
   imageUrl: string;
   imageAlt: string;
   caption: string;
@@ -13,13 +13,13 @@ interface ListImageCaptionTitleDescriptionProps {
   description: string;
 }
 
-export default function ListImageCaptionTitleDescription({
+export default function ListImageCaptionTitleDescriptionWidget({
   imageUrl,
   imageAlt,
   caption,
   title,
   description,
-}: ListImageCaptionTitleDescriptionProps) {
+}: ListImageCaptionTitleDescriptionWidgetProps) {
   return (
     <div className="max-w-md md:max-w-2xl bg-slate-200 rounded-xl shadow-lg overflow-hidden  mx-auto">
       <div className="md:flex">
