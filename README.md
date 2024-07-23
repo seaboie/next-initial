@@ -14,8 +14,9 @@ npm install -g next-initial
 ## Initial create folders and files components  
 
 - In File `tailwind.config.ts`  
+
 ```ts
-iimport type { Config } from "tailwindcss";
+import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
@@ -25,16 +26,25 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+      },
       colors: {
-        onPrimary: "#334155", // Define custom color to `onPrimary:`
-        onSecondary: '#64758B', // Define custom color to `onSecondary:`
+        onPrimary: "#334155",
+        onSecondary: '#64758B',
+        onTertiary: '#64758B',
         onError: '#FF5349',
         background: "var(--background)",
         foreground: "var(--foreground)",
-      },
-      fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
+        blue: "#1fb6ff",
+        pink: "#ff49db",
+        orange: "#ff7849",
+        green: "#13ce66",
+        "gray-dark": "#273444",
+        gray: "#8492a6",
+        "gray-light": "#d3dce6",
       },
     },
   },
@@ -70,7 +80,7 @@ nextinit
 
 > FINISH  
 
-## Define custom Color ( can change one point to effect all )  
+## 1. Define custom Color ( can change one point to effect all )  
 > `onPrimary`  
 > `onSecondary`  
 
@@ -99,15 +109,12 @@ theme: {
         gray: "#8492a6",
         "gray-light": "#d3dce6",
       },
-      fontFamily: {
-        sans: ["var(--font-geist-sans)"],
-        mono: ["var(--font-geist-mono)"],
-      },
     },
   },
+  plugins: [],
 ```  
 
-## Define `protocol` and `hostname` in `images / remotePatterns`...  
+## 2. Define `protocol` and `hostname` in `images / remotePatterns`...  
 
 - In File `next.config.mjs`  
 
