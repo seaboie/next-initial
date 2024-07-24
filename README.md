@@ -65,21 +65,14 @@ content: [
 ```  
 
 # ***- Usage***  
-> we must change directory to [ `src/pages` or `src/components` or `src/app`]  
-> - If not: tailwind CSS **not active**
-
-- Example : Create `components` folder in `src`
-- `cd` in `components` and run command  
-
 
 ## ***Run command***
 ```bash
 nextinit
 ```  
 
-> ## type your folder name; like `widget` >> Enter.  
-> ## if ; path `src/components/widget`  
-> - will auto generate code configuration in `tailwind.config.ts` and `next.config.mjs`  
+> ### type your folder name; like `widget` >> Enter.  
+
 
 > FINISH  
 

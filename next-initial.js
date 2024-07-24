@@ -11,10 +11,10 @@ import { contentTailwindConfig } from "./contentTailwindConfig.js";
 
 // Find folder name of project
 const getProjectName = (index) => {
-  const folderPaths = process.cwd().split('/');
+  const folderPaths = process.cwd().split("/");
   const projectName = folderPaths[folderPaths.length - index];
   return projectName;
-}
+};
 
 const rl = readline.createInterface({
   input: process.stdin,
@@ -27,31 +27,39 @@ function askQuestion(query) {
 
 (async () => {
   try {
-    const folderName = await askQuestion(
-      `🚀 🚀 🚀 NEXT.js ${getProjectName(3)} project. \n💻 Folder name is: `
+    // Project name
+    const projectName = getProjectName(1);
+    console.log(`🚀 🚀 🚀 NEXT.js ${projectName} project.`);
+
+    // Ask question
+    const widgetName = await askQuestion(
+      "💻 Enter the name for your widget folder: "
     );
 
-    const folderPath = path.join(process.cwd(), folderName);
+    const srcPath = path.join(process.cwd(), "src");
+    const componentsPath = path.join(srcPath, "components");
+    const widgetPath = path.join(componentsPath, widgetName);
 
-    if (!fs.existsSync(folderPath)) {
-      updateTailwindConfig(folderPath, "extend: {", `${contentTailwindConfig}`)
-        .then(() => {
-          updateNextConfig(folderPath, "nextConfig = {", `${contentNextConfig}`)
-            .then(() => {
-              fs.promises.mkdir(folderPath, { recursive: true }).then(() => {
-                console.log(`✨ Directory ${folderName} created successfully`);
-                createFiles(folderPath);
-              });
-            })
-            .catch((err) =>
-              console.log(`Could not update next.config.mjs file.`)
-            );
-        })
-        .catch((err) =>
-          console.log(`Could not update tailwind.config.ts file.`)
-        );
-      
-    }
+    updateTailwindConfig(process.cwd(), "extend: {", `${contentTailwindConfig}`)
+      .then(() => {
+        updateNextConfig(
+          process.cwd(),
+          "nextConfig = {",
+          `${contentNextConfig}`
+        )
+          .then(() => {
+            fs.promises.mkdir(widgetPath, { recursive: true }).then(() => {
+              console.log(
+                `✨ Directory struction src/components/${widgetName} created successfully`
+              );
+              createFiles(widgetPath);
+            });
+          })
+          .catch((err) =>
+            console.log(`Could not update next.config.mjs file.`)
+          );
+      })
+      .catch((err) => console.log(`Could not update tailwind.config.ts file.`));
   } catch (error) {
     console.error("😖 😖 😖 Error:", error);
   } finally {
