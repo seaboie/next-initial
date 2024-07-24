@@ -1,40 +1,59 @@
 #!/usr/bin/env node
 
-import fs from 'fs';
-import path from 'path';
-import readline from 'readline';
-import { execSync } from 'child_process';
-import { createFiles } from './fileContents.js';
+import fs from "fs";
+import path from "path";
+import readline from "readline";
+import { createFiles } from "./fileContents.js";
+import { updateTailwindConfig } from "./updateTailwindConfig.js";
+import { updateNextConfig } from "./updateNextConfig.js";
+import { contentNextConfig } from "./contentNextConfig.js";
+import { contentTailwindConfig } from "./contentTailwindConfig.js";
+
+// Find folder name of project
+const getProjectName = (index) => {
+  const folderPaths = process.cwd().split('/');
+  const projectName = folderPaths[folderPaths.length - index];
+  return projectName;
+}
 
 const rl = readline.createInterface({
   input: process.stdin,
-  output: process.stdout
+  output: process.stdout,
 });
 
 function askQuestion(query) {
-  return new Promise(resolve => rl.question(query, resolve));
+  return new Promise((resolve) => rl.question(query, resolve));
 }
 
 (async () => {
   try {
-    const projectName = await askQuestion('Folder name is: ');
-    // const useTypeScript = await askQuestion('Use TypeScript? (yes/no): ');
+    const folderName = await askQuestion(
+      `🚀 🚀 🚀 NEXT.js ${getProjectName(3)} project. \n💻 Folder name is: `
+    );
 
-    const folderPath = path.join(process.cwd(), projectName);
-    // const isTypeScript = useTypeScript.toLowerCase() === 'yes';
+    const folderPath = path.join(process.cwd(), folderName);
 
     if (!fs.existsSync(folderPath)) {
-      fs.mkdirSync(folderPath, { recursive: true });
-    } else {
-      console.log('Project directory already exists.');
-      process.exit(1);
+      updateTailwindConfig(folderPath, "extend: {", `${contentTailwindConfig}`)
+        .then(() => {
+          updateNextConfig(folderPath, "nextConfig = {", `${contentNextConfig}`)
+            .then(() => {
+              fs.promises.mkdir(folderPath, { recursive: true }).then(() => {
+                console.log(`✨ Directory ${folderName} created successfully`);
+                createFiles(folderPath);
+              });
+            })
+            .catch((err) =>
+              console.log(`Could not update next.config.mjs file.`)
+            );
+        })
+        .catch((err) =>
+          console.log(`Could not update tailwind.config.ts file.`)
+        );
+      
     }
-
-    createFiles(folderPath);
-
-    console.log('Project setup complete!');
   } catch (error) {
-    console.error('Error:', error);
+    console.error("😖 😖 😖 Error:", error);
   } finally {
     rl.close();
   }

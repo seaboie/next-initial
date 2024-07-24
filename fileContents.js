@@ -362,6 +362,8 @@ const createFiles = (projectPath) => {
 
     fs.writeFileSync(filePath, file.content);
   });
+  console.log("🎉 🎉 🎉 🎉 🎉 Project setup complete!");
+
 };
 
 export { createFiles };
