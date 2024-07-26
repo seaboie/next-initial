@@ -1,8 +1,13 @@
 import React from "react";
 
-export default function ButtonDefault({ text }: { text: string }) {
+interface ButtonDefaultProps {
+  text: string;
+  onClick: () => void;
+}
+
+export default function ButtonDefault({ text, onClick }: ButtonDefaultProps) {
   return (
-    <button className="p-2 bg-blue text-sm text-white font-bold rounded-lg cursor-pointer">
+    <button className="p-2 bg-blue text-sm text-white font-bold rounded-lg cursor-pointer" onClick={onClick} >
       {text}
     </button>
   );

@@ -75,7 +75,7 @@ export default function ProfileCardWidget({
           </div>
           <TextSmall text={`${followerCount} Followers`} />
         </div>
-        <ButtonDefault text={buttonTitle} />
+        <ButtonDefault text={buttonTitle} onClick={() => {}} />
       </div>
     </div>
   );
