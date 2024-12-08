@@ -40,11 +40,11 @@ function askQuestion(query) {
     const componentsPath = path.join(srcPath, "components");
     const widgetPath = path.join(componentsPath, widgetName);
 
-    updateTailwindConfig(process.cwd(), "extend: {", `${contentTailwindConfig}`)
+    updateTailwindConfig(process.cwd(), 'foreground: "var(--foreground)",', `${contentTailwindConfig}`)
       .then(() => {
         updateNextConfig(
           process.cwd(),
-          "nextConfig = {",
+          "/* config options here */",
           `${contentNextConfig}`
         )
           .then(() => {
@@ -56,7 +56,7 @@ function askQuestion(query) {
             });
           })
           .catch((err) =>
-            console.log(`Could not update next.config.mjs file.`)
+            console.log(`Could not update next.config.mjs file. \n ${err}`)
           );
       })
       .catch((err) => console.log(`Could not update tailwind.config.ts file.`));
