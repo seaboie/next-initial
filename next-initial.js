@@ -56,7 +56,8 @@ function askQuestion(query) {
             });
           })
           .catch((err) =>
-            console.log(`Could not update next.config.mjs file. \n ${err}`)
+            console.log("\n"),
+            console.log(`Could not update next.config.ts file.`)
           );
       })
       .catch((err) => console.log(`Could not update tailwind.config.ts file.`));

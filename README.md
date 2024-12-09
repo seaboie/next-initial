@@ -1,24 +1,48 @@
-# Next initial folders and files ( Next.js )  
+# Next initial folders and files ( Next.js 15.0.4 )
 
-## [Create Next.js app](https://nextjs.org/docs/getting-started/installation)  
+## [Create Next.js app](https://nextjs.org/docs/getting-started/installation)
 
 ```bash
 npx create-next-app@latest
-```  
+```
 
-## Install Package  
+## Install Package locally
+
+```bash
+npm install path/to/package-folder
+npx nextinit
+
+```
+
+## Install Package Global
+
 ```bash
 npm install -g next-initial
-```  
+```
 
-## Initial create folders and files components  
+# **_- Usage_**
 
-- In File `tailwind.config.ts`  
+## **_Run command_**
+
+```bash
+nextinit
+```
+
+> ### type your folder name; like `widget` >> Enter.
+
+> FINISH
+
+## 1. Define custom Color ( can change one point to effect all )
+
+> `onPrimary`  
+> `onSecondary`
+
+- In File `tailwind.config.ts`
 
 ```ts
 import type { Config } from "tailwindcss";
 
-const config: Config = {
+export default {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -26,18 +50,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
       colors: {
-        onPrimary: "#334155",
-        onSecondary: '#64758B',
-        onTertiary: '#64758B',
-        onError: '#FF5349',
         background: "var(--background)",
         foreground: "var(--foreground)",
+        onPrimary: "#334155",
+        onSecondary: "#64758B",
+        onTertiary: "#64758B",
+        onError: "#FF5349",
         blue: "#1fb6ff",
         pink: "#ff49db",
         orange: "#ff7849",
@@ -49,100 +68,38 @@ const config: Config = {
     },
   },
   plugins: [],
-};
-export default config;
+} satisfies Config;
+```
 
-```  
+## 2. Define `protocol` and `hostname` in `images / remotePatterns`...
 
-## content[]
-
-```ts
-content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
-```  
-
-# ***- Usage***  
-
-## ***Run command***
-```bash
-nextinit
-```  
-
-> ### type your folder name; like `widget` >> Enter.  
-
-
-> FINISH  
-
-## 1. Define custom Color ( can change one point to effect all )  
-> `onPrimary`  
-> `onSecondary`  
-
-- In File `tailwind.config.ts`  
+- In File `next.config.mjs`
 
 ```ts
-theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
-      },
-      colors: {
-        onPrimary: "#334155",
-        onSecondary: '#64758B',
-        onTertiary: '#64758B',
-        onError: '#FF5349',
-        background: "var(--background)",
-        foreground: "var(--foreground)",
-        blue: "#1fb6ff",
-        pink: "#ff49db",
-        orange: "#ff7849",
-        green: "#13ce66",
-        "gray-dark": "#273444",
-        gray: "#8492a6",
-        "gray-light": "#d3dce6",
-      },
-    },
-  },
-  plugins: [],
-```  
+import type { NextConfig } from "next";
 
-## 2. Define `protocol` and `hostname` in `images / remotePatterns`...  
-
-- In File `next.config.mjs`  
-
-```ts 
-
-/** @type {import('next').NextConfig} */
-const nextConfig = {
-  experimental: {
-    reactCompiler: true,
-    ppr: 'incremental'
-  },
+const nextConfig: NextConfig = {
+  /* config options here */
   images: {
     remotePatterns: [
       {
-        protocol:"https",
-        hostname:"images.pexels.com"
+        protocol: "https",
+        hostname: "images.pexels.com",
       },
       {
-        protocol:"https",
-        hostname:"images.unsplash.com"
-      }
-    ]
-  }
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
+```
 
-```  
+## Structure tree
 
-## Structure tree  
-
-```plaintext    
+```plaintext
 
 
 src/
@@ -190,16 +147,18 @@ src/
         │   ├── profile/
         │   │   └── profile_card_widget.tsx
         │   └── list_image_caption_title_description_widget.tsx
-            
 
-```  
 
----  
+```
+
+---
 
 ## Usage widget
-###  `<ProfileCardWidget />`  
 
-> profile_card.tsx  
+### `<ProfileCardWidget />`
+
+> profile_card.tsx
+
 ```ts
 import ProfileCardWidget from "@/components/widget/widget/profile_card_widget";
 
@@ -218,14 +177,13 @@ export default function Home() {
     </div>
   );
 }
-```  
+```
 
-<img width="387" alt="Screenshot 2567-07-19 at 20 27 06" src="https://github.com/user-attachments/assets/e6b274de-e59c-481a-b6dc-cfe63d738709"> 
+<img width="387" alt="Screenshot 2567-07-19 at 20 27 06" src="https://github.com/user-attachments/assets/e6b274de-e59c-481a-b6dc-cfe63d738709">
 
----   
+---
 
-
-### `<ListImageCaptionTitleDescriptionWidget />`  
+### `<ListImageCaptionTitleDescriptionWidget />`
 
 ```ts
 <ListImageCaptionTitleDescriptionWidget
@@ -235,12 +193,8 @@ export default function Home() {
   title="9364ae85-2697-5e30-870a-1b483a7a25ce"
   description="movement attack concerned shaking charge grown exactly did event burst earth porch dirt dull cookies national gate air blue stuck son that biggest chose"
 />
-```  
+```
 
-<img width="853" alt="Screenshot 2567-07-22 at 13 40 27" src="https://github.com/user-attachments/assets/b77dcc30-9d6d-4714-b29e-0879b9a8ff09">  
+<img width="853" alt="Screenshot 2567-07-22 at 13 40 27" src="https://github.com/user-attachments/assets/b77dcc30-9d6d-4714-b29e-0879b9a8ff09">
 
----  
-
-
-
-1:26:00
+---
